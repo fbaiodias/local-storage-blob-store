@@ -1,6 +1,6 @@
 {
   "name": "local-storage-blob-store",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "blob store that stores blobs on the browser's localStorage",
   "main": "index.js",
   "dependencies": {
