@@ -50,7 +50,9 @@ BlobStore.prototype.exists = function (opts, cb) {
 }
 
 BlobStore.prototype.remove = function (opts, cb) {
+  if (typeof opts === 'string') opts = { key: opts }
   if (!cb) cb = noop
+
   localStorage.removeItem(this.name + opts.key)
   cb()
 }
