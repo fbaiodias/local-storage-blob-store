@@ -1,0 +1,46 @@
+{
+  "name": "local-storage-blob-store",
+  "version": "0.0.1",
+  "description": "blob store that stores blobs on the browser's localStorage",
+  "main": "index.js",
+  "dependencies": {
+    "concat-stream": "^1.4.6",
+    "from2-array": "0.0.3"
+  },
+  "devDependencies": {
+    "abstract-blob-store": "^3.1.0",
+    "browserify": "^13.0.0",
+    "phantomjs": "^1.9.19",
+    "pre-commit": "^1.1.2",
+    "snazzy": "^2.0.1",
+    "standard": "^5.4.1",
+    "tape": "^2.14.0",
+    "testling": "^1.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xicombd/local-storage-blob-store.git"
+  },
+  "author": "Francisco Dias (@xicombd)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xicombd/local-storage-blob-store/issues"
+  },
+  "homepage": "https://github.com/xicombd/local-storage-blob-store",
+  "scripts": {
+    "test": "browserify test.js | testling",
+    "lint": "standard --verbose | snazzy"
+  },
+  "pre-commit": [
+    "test",
+    "lint"
+  ],
+  "keywords": [
+    "blob",
+    "store",
+    "localStorage",
+    "browser",
+    "storage",
+    "local"
+  ]
+}
