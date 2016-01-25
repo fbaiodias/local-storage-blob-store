@@ -36,7 +36,7 @@ BlobStore.prototype.createReadStream = function (opts) {
   var buff = localStorage.getItem(this.name + opts.key)
   var stream
   if (!buff) {
-    stream = from([new Buffer()])
+    stream = from([])
     stream.destroy(new Error('Blob not found'))
   } else {
     stream = from([new Buffer(buff, 'hex')])
