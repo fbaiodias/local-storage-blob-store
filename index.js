@@ -25,7 +25,7 @@ BlobStore.prototype.createWriteStream = function (opts, cb) {
 
   function done (contents) {
     var key = opts.key || crypto.createHash('sha1').update(contents).digest('hex')
-    localStorage.setItem(self.name + key, contents)
+    localStorage.setItem(self.name + key, contents.toString('hex'))
     cb(null, {key: key, size: contents.length, name: opts.name})
   }
 }
@@ -36,10 +36,10 @@ BlobStore.prototype.createReadStream = function (opts) {
   var buff = localStorage.getItem(this.name + opts.key)
   var stream
   if (!buff) {
-    stream = from([])
+    stream = from([new Buffer()])
     stream.destroy(new Error('Blob not found'))
   } else {
-    stream = from([buff])
+    stream = from([new Buffer(buff, 'hex')])
   }
   return stream
 }
