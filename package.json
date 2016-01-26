@@ -10,12 +10,11 @@
   "devDependencies": {
     "abstract-blob-store": "^3.1.0",
     "browserify": "^13.0.0",
-    "phantomjs": "^1.9.19",
     "pre-commit": "^1.1.2",
     "snazzy": "^2.0.1",
     "standard": "^5.4.1",
     "tape": "^2.14.0",
-    "testling": "^1.7.1"
+    "tape-run": "^2.1.2"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,7 @@
   },
   "homepage": "https://github.com/xicombd/local-storage-blob-store",
   "scripts": {
-    "test": "browserify test.js | testling",
+    "test": "browserify test.js | tape-run",
     "lint": "standard --verbose | snazzy"
   },
   "pre-commit": [
